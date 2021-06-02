@@ -25,11 +25,11 @@ class MoneyTransferTest {
                 .validLogin(getAuthInfo())
                 .validVerify(getVerificationCodeFor(getAuthInfo()));
         int actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId()) + change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())) {
             actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId());
         }
         int actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId()) - change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())) {
             actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId());
         }
         val dashboardPageAfterTransfer = dashboardPageBeforeTransfer
@@ -48,11 +48,11 @@ class MoneyTransferTest {
                 .validLogin(getAuthInfo())
                 .validVerify(getVerificationCodeFor(getAuthInfo()));
         int actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId()) - change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())) {
             actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId());
         }
         int actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId()) + change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())) {
             actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId());
         }
         val dashboardPageAfterTransfer = dashboardPageBeforeTransfer
@@ -65,7 +65,7 @@ class MoneyTransferTest {
     }
 
     @Test
-    void shouldLoginWithInvalidUser(){
+    void shouldLoginWithInvalidUser() {
         val loginPage = new LoginPage();
         loginPage.invalidLogin(getOtherAuthInfo(getAuthInfo()));
         $("[data-test-id=\"error-notification\"] .notification__content").shouldBe(Condition.visible)
@@ -79,11 +79,11 @@ class MoneyTransferTest {
                 .validLogin(getAuthInfo())
                 .validVerify(getVerificationCodeFor(getAuthInfo()));
         int actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId()) + change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getFirstCardId())) {
             actualAmountFirst = dashboardPageBeforeTransfer.getCardBalance(getFirstCardId());
         }
         int actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId()) - change;
-        if(change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())){
+        if (change > dashboardPageBeforeTransfer.getCardBalance(getSecondCardId())) {
             actualAmountSecond = dashboardPageBeforeTransfer.getCardBalance(getSecondCardId());
         }
         val dashboardPageAfterTransfer = dashboardPageBeforeTransfer

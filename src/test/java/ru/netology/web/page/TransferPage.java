@@ -17,7 +17,7 @@ public class TransferPage {
         heading.shouldBe(visible);
     }
 
-    public DashboardPage transferFrom(int amount, DataHelper.Card card){
+    public DashboardPage transferFrom(int amount, DataHelper.Card card) {
         $(amountInput).setValue(Integer.toString(amount));
         $(cardInput).setValue(card.getNumber());
         $(transfer).click();
